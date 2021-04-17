@@ -1,0 +1,26 @@
+.register-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 80%;
+    margin: auto;
+
+}
+
+.register-wrapper mat-card-header,
+.register-wrapper mat-card-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.register-wrapper mat-card-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-wrapper mat-form-field {
+    display: block;
+}

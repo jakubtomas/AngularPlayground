@@ -1,0 +1,61 @@
+<mat-toolbar color="primary">
+    <span>Films App</span>
+    <span>
+    <button mat-flat-button color="primary" aria-label="Users" routerLink="/registration">
+      <mat-icon>person</mat-icon> Registration
+    </button>
+  </span>
+
+    <span>
+    <button mat-flat-button color="primary" aria-label="Users" routerLink="/registration2">
+      <mat-icon>person</mat-icon> Registration2
+
+    </button>
+  </span>
+
+    <span>
+    <button mat-flat-button color="primary" aria-label="Groups" routerLink="/login">
+      <mat-icon>group</mat-icon> Login
+    </button>
+  </span>
+    <span>
+    <button mat-flat-button color="primary" aria-label="Films" routerLink="/home">
+      <mat-icon>movie</mat-icon> Home
+    </button>
+  </span>
+    <span>
+    <button mat-flat-button color="primary" aria-label="Posts" routerLink="/posts">
+       <mat-icon>movie</mat-icon> Posts
+    </button>
+  </span>
+
+
+    <!-- <span>
+
+     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+     <mat-menu #menu="matMenu">
+       <button mat-menu-item>Item 1</button>
+       <button mat-menu-item>Item 2</button>
+     </mat-menu>
+     </span>-->
+
+    <!--
+      <span class="spacer"></span>
+      <span *ngIf="username$ | async; then thenBlock else elseBlock"></span>
+      <ng-template #thenBlock>
+          <strong>{{username$ | async}}</strong>
+          <button mat-flat-button color="primary" aria-label="Logout" (click)="logout()">
+              <mat-icon>logout</mat-icon> Logout
+          </button>
+      </ng-template>
+      <ng-template #elseBlock>
+          <button mat-flat-button color="primary" aria-label="Register" routerLink="/register">
+              <mat-icon>person_add</mat-icon> Register
+          </button>
+          <button mat-flat-button color="primary" aria-label="Logout" routerLink="/login">
+              <mat-icon>login</mat-icon> Login
+          </button>
+      </ng-template>
+      <span>
+    </span>-->
+</mat-toolbar>
