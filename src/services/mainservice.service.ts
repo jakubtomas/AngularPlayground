@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -13,14 +14,17 @@ export class MainserviceService {
     }
 
 
-    /*getAllPost(): Observable<any> {
-        return this.http.get(this.postsUrl+"posts")/!*.pipe(
+    getAllPosts(): Observable<any> {
+        return this.http.get(this.postsUrl + "posts")/*.pipe(
             map(data => {
 
                 console.log(data);
                 return data;
             }),
-        )*!/
-    }*/
+        )*/
+    }
 
+    getOnepost(id: number): Observable<any> {
+        return this.http.get(this.postsUrl + "posts/" + id)
+    }
 }

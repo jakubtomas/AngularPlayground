@@ -10,7 +10,7 @@ import {MainserviceService} from "../../../services/mainservice.service";
 })
 export class PostsComponent implements OnInit {
 
-    repos: [];
+    result : Object;
 
     loading: boolean = false;
     errorMessage;
@@ -19,7 +19,12 @@ export class PostsComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        console.log("function run");
 
+        this.service.getAllPosts().subscribe(data => {
+            console.log(data);
 
+            this.result = data
+        });
     }
 }

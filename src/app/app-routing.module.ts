@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'registration2', component: Registration2Component},
   {path: 'login', component: LoginComponent},
   {path: 'posts', component: PostsComponent},
-  //{ path: 'post/:postId', component: PostComponent},
+  {path: 'post/:postId', component: PostComponent},
   {path: '**', component: LoginComponent},
 
 ];

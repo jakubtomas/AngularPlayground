@@ -1,12 +1,13 @@
 <div class="moj-container">
     <div class="kontainer">
 
-        <div class="flex-item">
-            <h5 class="card-title">Card title</h5>
-            <p>asdl;kfjas;dlkfjasd;lkfjasd;lkfja</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="flex-item" *ngFor="let item of result">
+            <h5 class="card-title">{{item.title }}</h5>
+            <p>Default text</p>
+            <a [routerLink]="['/post',item.id ]" class="btn btn-primary">Go somewhere</a>
         </div>
 
-
     </div>
+
+    <p>{{result | json}}</p>
 </div>
