@@ -7,7 +7,7 @@ import {FormControl, FormGroup} from "@angular/forms";
     styleUrls: ['./registration2.component.css']
 })
 export class Registration2Component implements OnInit {
-// commit for fun 
+
     form: any = {};
     isSuccessful = false;
     isSignUpFailed = false;
