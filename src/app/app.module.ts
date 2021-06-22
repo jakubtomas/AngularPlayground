@@ -16,6 +16,8 @@ import {NavBarComponent} from './components/nav-bar/nav-bar.component';
 import {LoginComponent} from './components/login/login.component';
 import {HomeComponent} from './components/home/home.component';
 import { RegistrationbComponent } from './components/registrationb/registrationb.component';
+import { PlaygroundComponent } from './components/playground/playground.component';
+import { PostschildComponent } from './components/postschild/postschild.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { RegistrationbComponent } from './components/registrationb/registrationb
       NavBarComponent,
       LoginComponent,
       HomeComponent,
-      RegistrationbComponent
+      RegistrationbComponent,
+      PlaygroundComponent,
+      PostschildComponent
   ],
   imports: [
     BrowserModule,

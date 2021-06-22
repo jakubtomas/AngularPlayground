@@ -1,4 +1,12 @@
 <div class="moj-container">
+    <p>posts component</p>
+    <app-postschild [item] ="currentItem" (newItemEvent)="addItem($event)"></app-postschild>
+
+    <ul>
+        <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+
+
     <div class="kontainer">
 
         <div class="flex-item" *ngFor="let item of result">

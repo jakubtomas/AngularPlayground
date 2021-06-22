@@ -8,6 +8,7 @@ import {PostsComponent} from "./components/posts/posts.component";
 import {RegistrationbComponent} from "./components/registrationb/registrationb.component";
 
 const routes: Routes = [
+  {path: '', redirectTo: 'registration',pathMatch: 'full'},
   {path: 'registration', component: RegistrationComponent},
   {path: 'registration2', component: Registration2Component},
   {path: 'registrationb', component: RegistrationbComponent},

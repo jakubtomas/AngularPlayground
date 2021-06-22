@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+//import {MainService} from "../../../services/mainservice.service";
 import {MainserviceService} from "../../../services/mainservice.service";
 
 //import {GeneralService} from "../../../../../xlearn/src/services/general.service";
@@ -9,6 +10,10 @@ import {MainserviceService} from "../../../services/mainservice.service";
     styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+
+    items = ['item1', 'item2', 'item3', 'item4'];
+
+    currentItem: string ='message from posts.component';
 
     result : Object;
 
@@ -27,4 +32,10 @@ export class PostsComponent implements OnInit {
             this.result = data
         });
     }
+
+
+    addItem(newItem: string) {
+        this.items.push(newItem);
+    }
+
 }
