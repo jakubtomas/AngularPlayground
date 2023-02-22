@@ -28,15 +28,5 @@ export class MainserviceService {
         return this.http.get(this.postsUrl + "posts/" + id)
     }
 
-    storeRecipes() {
-        //const recipes = this.recipeService.getRecipes();
-        this.http
-            .put(
-                'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',
-                recipes
-            )
-            .subscribe(response => {
-                console.log(response);
-            });
-    }
+
 }

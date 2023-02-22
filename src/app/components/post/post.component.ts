@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {MainService} from "../../../services/mainservice.service";
+//import {MainService} from "../../../services/mainservice.service";
+import {MainserviceService} from "../../../services/mainservice.service";
 import {ActivatedRoute} from "@angular/router";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
@@ -15,7 +16,7 @@ export class PostComponent implements OnInit {
     result: Object;
 
 
-    constructor(private route: ActivatedRoute, private service: MainService) {
+    constructor(private route: ActivatedRoute, private service: MainserviceService) {
 
     }
 

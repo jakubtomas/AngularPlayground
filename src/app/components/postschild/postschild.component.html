@@ -1,0 +1,13 @@
+<div class="postschild">
+    <p>postschild works!</p>
+    <p>{{item}}</p>
+    <h1>hello</h1>
+
+    <label for="item-input">Add an item:</label>
+    <input type="text" id="item-input" #newItem>
+    <button (click)="addNewItem(newItem.value)">Add to parent's list</button>
+    <p>child component</p>
+    <br>
+    <br>
+
+</div>
