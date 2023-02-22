@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../../entities/user";
-import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
+import {AbstractControl, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validators} from "@angular/forms";
 
 @Component({
     selector: 'app-registration',
@@ -10,11 +10,11 @@ import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} f
 export class RegistrationComponent implements OnInit {
 
 
-    registerForm = new FormGroup({
-        username: new FormControl('',
+    registerForm = new UntypedFormGroup({
+        username: new UntypedFormControl('',
             [Validators.required, Validators.minLength(3)]
         ),
-        email: new FormControl('',
+        email: new UntypedFormControl('',
             [Validators.required,
                 Validators.email,
                 Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")]
@@ -22,8 +22,8 @@ export class RegistrationComponent implements OnInit {
         /* password: new FormControl('', [Validators.required,
            this.passwordValidator()]),
         */
-        password: new FormControl('', Validators.required),
-        password2: new FormControl('', Validators.required)
+        password: new UntypedFormControl('', Validators.required),
+        password2: new UntypedFormControl('', Validators.required)
     }, this.passwordsMatchValidator);
 
     hide = true;
@@ -37,20 +37,20 @@ export class RegistrationComponent implements OnInit {
     }
 
 
-    get username(): FormControl {
-        return this.registerForm.get('username') as FormControl;
+    get username(): UntypedFormControl {
+        return this.registerForm.get('username') as UntypedFormControl;
     }
 
-    get email(): FormControl {
-        return this.registerForm.get('email') as FormControl;
+    get email(): UntypedFormControl {
+        return this.registerForm.get('email') as UntypedFormControl;
     }
 
-    get password(): FormControl {
-        return this.registerForm.get('password') as FormControl;
+    get password(): UntypedFormControl {
+        return this.registerForm.get('password') as UntypedFormControl;
     }
 
-    get password2(): FormControl {
-        return this.registerForm.get('password2') as FormControl;
+    get password2(): UntypedFormControl {
+        return this.registerForm.get('password2') as UntypedFormControl;
     }
 
     onSubmit() {
@@ -87,7 +87,7 @@ export class RegistrationComponent implements OnInit {
       }
     }*/
 
-    passwordsMatchValidator(model: FormGroup): ValidationErrors {
+    passwordsMatchValidator(model: UntypedFormGroup): ValidationErrors {
 
         const password = model.get('password');
         const password2 = model.get('password2');

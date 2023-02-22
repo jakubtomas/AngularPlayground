@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {UntypedFormControl, UntypedFormGroup} from "@angular/forms";
 
 @Component({
     selector: 'app-registration2',
@@ -19,9 +19,9 @@ export class Registration2Component implements OnInit {
     ngOnInit(): void {
     }
 
-    userForm = new FormGroup({
-        name: new FormControl(),
-        age: new FormControl('20')
+    userForm = new UntypedFormGroup({
+        name: new UntypedFormControl(),
+        age: new UntypedFormControl('20')
     });
 
 
