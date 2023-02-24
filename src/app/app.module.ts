@@ -22,6 +22,8 @@ import { TableComponent } from './components/table/table.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatNativeDateModule } from '@angular/material/core';
+import { Table2Component } from './components/table2/table2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,7 @@ import { MatMenuModule } from '@angular/material/menu';
     PostschildComponent,
     StepperComponent,
     TableComponent,
+    Table2Component,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSliderModule,
     MatStepperModule,
     MatMenuModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
