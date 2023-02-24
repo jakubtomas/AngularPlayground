@@ -1,43 +1,94 @@
 <mat-toolbar color="primary">
-    <span>Films App</span>
-    <span>
-    <button mat-flat-button color="primary" aria-label="Users" routerLink="/registration">
+  <span>Learning App</span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>person</mat-icon>Forms Component
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button
+      mat-menu-item
+      color="primary"
+      aria-label="Users"
+      routerLink="/registration"
+    >
       <mat-icon>person</mat-icon> Registration
     </button>
-  </span>
-
-    <span>
-    <button mat-flat-button color="primary" aria-label="Users" routerLink="/registration2">
+    <!--  -->
+    <button
+      mat-menu-item
+      color="primary"
+      aria-label="Users"
+      routerLink="/registration2"
+    >
       <mat-icon>person</mat-icon> Registration2
+    </button>
+    <!--  -->
+    <button
+      mat-menu-item
+      color="primary"
+      aria-label="Users"
+      routerLink="/registrationb"
+    >
+      <mat-icon>person</mat-icon> RegistrationB
+    </button>
+    <!--  -->
+    <button
+      mat-menu-item
+      color="primary"
+      aria-label="Groups"
+      routerLink="/login"
+    >
+      <mat-icon>group</mat-icon> Login
+    </button>
+    <!--  -->
+  </mat-menu>
 
+  <span>
+    <button
+      mat-flat-button
+      color="primary"
+      aria-label="Films"
+      routerLink="/home"
+    >
+      <mat-icon>movie</mat-icon> Home
+    </button>
+  </span>
+  <span>
+    <button
+      mat-flat-button
+      color="primary"
+      aria-label="Posts"
+      routerLink="/posts"
+    >
+      <mat-icon>movie</mat-icon> Posts
     </button>
   </span>
 
   <span>
-    <button mat-flat-button color="primary" aria-label="Users" routerLink="/registrationb">
-      <mat-icon>person</mat-icon> RegistrationB
-
+    <button
+      mat-flat-button
+      color="primary"
+      aria-label="Posts"
+      routerLink="/stepper"
+    >
+      <mat-icon>movie</mat-icon> Stepper Form
     </button>
   </span>
 
-    <span>
-    <button mat-flat-button color="primary" aria-label="Groups" routerLink="/login">
-      <mat-icon>group</mat-icon> Login
-    </button>
-  </span>
-    <span>
-    <button mat-flat-button color="primary" aria-label="Films" routerLink="/home">
-      <mat-icon>movie</mat-icon> Home
-    </button>
-  </span>
-    <span>
-    <button mat-flat-button color="primary" aria-label="Posts" routerLink="/posts">
-       <mat-icon>movie</mat-icon> Posts
+  <span>
+    <button
+      mat-flat-button
+      color="primary"
+      aria-label="Posts"
+      routerLink="/table"
+    >
+      <mat-icon>movie</mat-icon> Table
     </button>
   </span>
 
-
-    <!-- <span>
+  <!-- <span>
 
      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
      <mat-menu #menu="matMenu">
@@ -46,7 +97,7 @@
      </mat-menu>
      </span>-->
 
-    <!--
+  <!--
       <span class="spacer"></span>
       <span *ngIf="username$ | async; then thenBlock else elseBlock"></span>
       <ng-template #thenBlock>
