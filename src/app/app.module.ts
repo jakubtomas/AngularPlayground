@@ -24,6 +24,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
 import { Table2Component } from './components/table2/table2.component';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { Table2Component } from './components/table2/table2.component';
     Table2Component,
   ],
   imports: [
+    MatSelectModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

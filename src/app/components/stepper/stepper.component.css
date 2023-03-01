@@ -110,3 +110,6 @@ mat-icon {
   display: flex;
   margin-top: 5px;
 }
+.json-data {
+  color: aliceblue;
+}

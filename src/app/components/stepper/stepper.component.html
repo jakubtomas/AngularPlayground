@@ -12,7 +12,8 @@
         <!--  -->
         <mat-step [stepControl]="firstFormGroup">
           <form [formGroup]="firstFormGroup">
-            value ::{{ firstFormGroup }}
+            <p class="json-data">value ::{{ firstFormGroup.value | json }}</p>
+
             <ng-template matStepLabel>Fill out your name</ng-template>
             <mat-form-field appearance="fill">
               <mat-label>Name</mat-label>

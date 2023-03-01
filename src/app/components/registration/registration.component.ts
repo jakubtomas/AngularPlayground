@@ -1,67 +1,91 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from "../../../entities/user";
-import {AbstractControl, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validators} from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { User } from '../../../entities/user';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 
 @Component({
-    selector: 'app-registration',
-    templateUrl: './registration.component.html',
-    styleUrls: ['./registration.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
-
-
-    registerForm = new UntypedFormGroup({
-        username: new UntypedFormControl('',
-            [Validators.required, Validators.minLength(3)]
-        ),
-        email: new UntypedFormControl('',
-            [Validators.required,
-                Validators.email,
-                Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")]
-        ),
-        /* password: new FormControl('', [Validators.required,
+  carsList: string[] = ['VOLVO', 'SKODA', 'BMW', 'Citroen', 'Tesla'];
+  //toppings = new FormControl('');
+  registerForm = new FormGroup(
+    {
+      username: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email,
+        Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$'),
+      ]),
+      cars: new FormControl([], [Validators.required, this.minSelected(2)]),
+      /* password: new FormControl('', [Validators.required,
            this.passwordValidator()]),
         */
-        password: new UntypedFormControl('', Validators.required),
-        password2: new UntypedFormControl('', Validators.required)
-    }, this.passwordsMatchValidator);
+      password: new FormControl('', Validators.required),
+      password2: new FormControl('', Validators.required),
+    },
+    this.passwordsMatchValidator
+  );
 
-    hide = true;
-    passwordMessage = "";
+  hide = true;
+  passwordMessage = '';
 
-    constructor() {
-    }
+  minSelected(min: number): ValidatorFn {
+    return (control: FormControl): { [key: string]: any } | null => {
+      if (control.value.length < min) {
+        return { minSelected: true };
+      } else {
+        return null;
+      }
+    };
+  }
 
-    ngOnInit(): void {
+  constructor() {}
 
-    }
+  ngOnInit(): void {}
 
+  get username(): FormControl {
+    return this.registerForm.get('username') as FormControl;
+  }
 
-    get username(): UntypedFormControl {
-        return this.registerForm.get('username') as UntypedFormControl;
-    }
+  get email(): FormControl {
+    return this.registerForm.get('email') as FormControl;
+  }
 
-    get email(): UntypedFormControl {
-        return this.registerForm.get('email') as UntypedFormControl;
-    }
+  get cars(): FormControl {
+    return this.registerForm.get('cars') as FormControl;
+  }
+  get password(): FormControl {
+    return this.registerForm.get('password') as FormControl;
+  }
 
-    get password(): UntypedFormControl {
-        return this.registerForm.get('password') as UntypedFormControl;
-    }
+  get password2(): FormControl {
+    return this.registerForm.get('password2') as FormControl;
+  }
 
-    get password2(): UntypedFormControl {
-        return this.registerForm.get('password2') as UntypedFormControl;
-    }
+  onSubmit(registerForm: FormGroup) {
+    console.log('register Form data');
+    console.log(registerForm);
 
-    onSubmit() {
-        const user = new User(
-            this.username.value,
-            this.password.value,
-            this.email.value,
-            undefined,
-            undefined,
-        );
-        /*this.usersService.register(user).subscribe(u => {
+    const user = new User(
+      this.username.value,
+      this.password.value,
+      this.email.value,
+      undefined,
+      undefined
+    );
+    /*this.usersService.register(user).subscribe(u => {
           this.snackbarService.successMessage(
         },error=>{
           this.snackbarService.errorMessage("Login or email already exists")
@@ -69,13 +93,13 @@ export class RegistrationComponent implements OnInit {
           );
           this.router.navigateByUrl("/login");
         })*/
-    }
+  }
 
-    getErrors(model: AbstractControl) {
-        return JSON.stringify(model.errors);
-    }
+  getErrors(model: AbstractControl) {
+    return JSON.stringify(model.errors);
+  }
 
-    /*passwordValidator(): ValidatorFn {
+  /*passwordValidator(): ValidatorFn {
       return (model: FormControl): ValidationErrors => {
         const result = zxcvbn(model.value);
 
@@ -87,17 +111,16 @@ export class RegistrationComponent implements OnInit {
       }
     }*/
 
-    passwordsMatchValidator(model: UntypedFormGroup): ValidationErrors {
-
-        const password = model.get('password');
-        const password2 = model.get('password2');
-        if (password.value === password2.value) {
-            password2.setErrors(null);
-            return null;
-        } else {
-            const error = {differentPasswords: 'Passwords do not match'};
-            password2.setErrors(error);
-            return error;
-        }
+  passwordsMatchValidator(model: FormGroup): ValidationErrors {
+    const password = model.get('password');
+    const password2 = model.get('password2');
+    if (password.value === password2.value) {
+      password2.setErrors(null);
+      return null;
+    } else {
+      const error = { differentPasswords: 'Passwords do not match' };
+      password2.setErrors(error);
+      return error;
     }
+  }
 }
