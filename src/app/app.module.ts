@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from "../modules/material.module";
+import { MaterialModule } from '../modules/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -17,8 +17,14 @@ import { HomeComponent } from './components/home/home.component';
 import { RegistrationbComponent } from './components/registrationb/registrationb.component';
 import { PlaygroundComponent } from './components/playground/playground.component';
 import { PostschildComponent } from './components/postschild/postschild.component';
-
-
+import { StepperComponent } from './components/stepper/stepper.component';
+import { TableComponent } from './components/table/table.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatNativeDateModule } from '@angular/material/core';
+import { Table2Component } from './components/table2/table2.component';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,18 +37,26 @@ import { PostschildComponent } from './components/postschild/postschild.componen
     HomeComponent,
     RegistrationbComponent,
     PlaygroundComponent,
-    PostschildComponent
+    PostschildComponent,
+    StepperComponent,
+    TableComponent,
+    Table2Component,
   ],
   imports: [
+    MatSelectModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSliderModule,
+    MatStepperModule,
+    MatMenuModule,
+    MatNativeDateModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

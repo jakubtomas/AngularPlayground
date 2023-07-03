@@ -1,6 +1,10 @@
-# Angular Material PlayGround 
+# Angular Material PlayGround
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+# Simply form , registration , very basic project for learning fun
+
+# Stepper Form
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 
 ## Development server
 
