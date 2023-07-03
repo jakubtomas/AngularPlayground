@@ -9,6 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class RegistrationbComponent implements OnInit {
   @ViewChild('f', { static: false }) signupForm: NgForm;
+
   animal: string = 'dog';
   user2: string = '';
   defaultQuestion = 'teacher';

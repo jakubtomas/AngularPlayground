@@ -1,32 +1,28 @@
-import {Component, OnInit} from '@angular/core';
-import {UntypedFormControl, UntypedFormGroup} from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'app-registration2',
-    templateUrl: './registration2.component.html',
-    styleUrls: ['./registration2.component.css']
+  selector: 'app-registration2',
+  templateUrl: './registration2.component.html',
+  styleUrls: ['./registration2.component.css'],
 })
 export class Registration2Component implements OnInit {
+  form: any = {};
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-    form: any = {};
-    isSuccessful = false;
-    isSignUpFailed = false;
-    errorMessage = '';
+  constructor() {}
 
-    constructor() {
-    }
+  ngOnInit(): void {}
 
-    ngOnInit(): void {
-    }
+  userForm = new FormGroup({
+    name: new FormControl(),
+    age: new FormControl('20'),
+  });
 
-    userForm = new UntypedFormGroup({
-        name: new UntypedFormControl(),
-        age: new UntypedFormControl('20')
-    });
-
-
-    onSubmit(): void {
-        /*    this.authService.registerUser(this.form).subscribe(
+  onSubmit(): void {
+    /*    this.authService.registerUser(this.form).subscribe(
                 data => {
                   console.log(data);
                   this.isSuccessful = true;
@@ -43,6 +39,5 @@ export class Registration2Component implements OnInit {
 
                 }
             );*/
-    }
-
+  }
 }
