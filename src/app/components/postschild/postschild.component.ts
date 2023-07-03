@@ -1,21 +1,17 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-postschild',
   templateUrl: './postschild.component.html',
-  styleUrls: ['./postschild.component.css']
+  styleUrls: ['./postschild.component.css'],
 })
 export class PostschildComponent implements OnInit {
-
   @Output() newItemEvent = new EventEmitter<string>();
 
-  @Input() item ='';
-  constructor() {
-  }
+  @Input() item = '';
+  constructor() {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   addNewItem(value: string) {
     this.newItemEvent.emit(value);
