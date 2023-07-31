@@ -123,4 +123,23 @@ export class RegistrationComponent implements OnInit {
       return error;
     }
   }
+
+  // code below working but you have to change applying validator different way
+  // password2: ['', Validators.required]
+  // }, { validators: passwordsMatchValidator() });
+
+  // passwordsMatchValidator(): ValidatorFn {
+  //   return (control: AbstractControl): ValidationErrors | null => {
+  //     const password = control.get('password');
+  //     const password2 = control.get('password2');
+
+  //     if (password.value === password2.value) {
+  //       password2.setErrors(null);
+  //       return null;
+  //     } else {
+  //       password2.setErrors({ differentPasswords: 'Passwords do not match' });
+  //       return { differentPasswords: 'Passwords do not match' };
+  //     }
+  //   };
+  // }
 }
